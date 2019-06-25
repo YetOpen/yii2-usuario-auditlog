@@ -1,0 +1,25 @@
+{
+    "name": "yetopen/yii2-usuario-auditlog",
+    "description": "Log user security related activities",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","yii2-usuario"],
+    "license": "GPL-3.0+",
+    "authors": [
+        {
+            "name": "Lorenzo Milesi",
+            "email": "maxxer@yetopen.it"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0",
+        "2amigos/yii2-usuario": "~1"
+    },
+    "extra": {
+        "bootstrap": "yetopen\\UsuarioAuditlog\\HookEvents"
+    },
+    "autoload": {
+        "psr-4": {
+            "yetopen\\UsuarioAuditlog\\": ""
+        }
+    }
+}
