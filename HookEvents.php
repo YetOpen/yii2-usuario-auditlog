@@ -110,5 +110,17 @@ class HookEvents implements BootstrapInterface
                 'ip' => Yii::$app->request->remoteIP,
             ]), "usuario.audit");
         });
+        YiiEvent::on(AdminController::class, UserEvent::EVENT_AFTER_PROFILE_UPDATE, function (UserEvent $event) {
+            Yii::info(Yii::t('usuario', "User '{user}' profile updated from {ip} by an admin", [
+                'user' => $event->user->username,
+                'ip' => Yii::$app->request->remoteIP,
+            ]), "usuario.audit");
+        });
+        YiiEvent::on(AdminController::class, UserEvent::EVENT_AFTER_ACCOUNT_UPDATE, function (UserEvent $event) {
+            Yii::info(Yii::t('usuario', "User '{user}' account updated from {ip} by an admin", [
+                'user' => $event->user->username,
+                'ip' => Yii::$app->request->remoteIP,
+            ]), "usuario.audit");
+        });
     }
 }
